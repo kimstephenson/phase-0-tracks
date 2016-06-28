@@ -1,14 +1,32 @@
 #contact-info {
   font-size : .8em;
 }
-
+/*The second and last input sets the behavior of the id/class.*/
+#contact-info {
+	font-size: 2em;
+}
 .job {
   background-color: #e9e5dc;
   border-radius: 5px;
   padding: 10px;
   margin-top: 10px;
 }
-
 .list {
   font-size: .8em;
+}
+a:link {
+	color: black;
+}
+a:visited {
+	color: purple;
+}
+a:hover {
+	color: orange;
+}
+a:active {
+	color: pink;
+}
+/*To select the child element of another specific element, you would write [parent element] > [child element] */
+ul > li {
+	color: green;
 }
