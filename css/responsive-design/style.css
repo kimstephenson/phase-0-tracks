@@ -41,7 +41,7 @@ cite {
   vertical-align: top;
   position: absolute;
   left: 65%;
-  top: 100px;
+  top: 10%;
 }
 
 
@@ -63,8 +63,30 @@ figcaption {
   text-align: right;
 }
 
-@media screen and (max-width: 500px) {
-  body {
-    background-color: hotpink;
+@media screen and (max-width: 700px) {
+  h1 {
+    font-size: 1.2em;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #links-heading{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  #external-links ul {
+    width: 100%;
+    position: absolute;
+    top: 5%;
+    left: 0;
+  }
+  main {
+    top: 10%;
+    width: 100%;
+    display: inline-block;
+    position: absolute;
+    top: 20%;
   }
 }
