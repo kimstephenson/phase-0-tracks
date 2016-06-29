@@ -1,14 +1,15 @@
 body {
-  width: 960px;
+  max-width: 960px;
+  min-width: 300px;
 }
 
 main {
-  width: 756px;
+  width: 60%;
   padding: 0;
   display: block;
   float: left;
-  vertical-align: top;
   position: absolute;
+  margin-left: 0;
 }
 
 blockquote {
@@ -24,21 +25,23 @@ cite {
 
 #links-heading {
   display: inline;
+  width: 20%;
   float: right;
   vertical-align: top;
-  position: relative;
+  position: absolute;
+  left: 65%;
 }
 
 #external-links ul {
   list-style-type: none;
   padding-left: 0px;
-  width: 200px;
+  width: 20%;
   display: inline;
   float: right;
   vertical-align: top;
-  position: relative;
-  left: 200px;
-  top: 50px;
+  position: absolute;
+  left: 65%;
+  top: 100px;
 }
 
 
@@ -58,4 +61,10 @@ figure {
 figcaption {
   font-style: italic;
   text-align: right;
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
 }
