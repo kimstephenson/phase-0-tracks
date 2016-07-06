@@ -13,11 +13,25 @@ def hamster_adoption
     good_candidate = false
     end
   puts "What is the estimated age?"
-  age = gets.chomp.to_i
-
-    if age == ""
+  age = gets.chomp
+    if age.length == 0
       age = nil
+    else
+      age = age.to_i
     end
+  puts "The hamster's name is #{name}."
+  puts "The hamster's volume is #{volume}."
+  puts "The fur color is #{color}."
+  if good_candidate == true
+    puts "The hamster is a good candidate."
+  else
+    puts "The hamster is not a good candidate."
   end
+  if age == nil
+    puts "We don't know the age."
+  else
+    puts "The age is #{age}."
+  end
+end
 
 hamster_adoption
