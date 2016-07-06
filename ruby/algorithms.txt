@@ -1,0 +1,12 @@
+-If your destination is on a floor higher than you are currently on, press the UP button.
+-Otherwise, if your destination is on a floor lower than you are currently on, press the DOWN button.
+
+-When the elevator opens, wait for any people who are exiting to walk out. Then, move forward to enter the elevator.
+-Turn around. On the elevator panel, push the button corresponding to the floor your destination is on. (If the button is already lit up, you don't need to push it.)
+-Wait for the elevator to arrive at your floor. When the doors open, move forward to exit the elevator.
+
+Walking the Dog
+-Put harness on dog and attach leash to harness. Hold the end of the leash.
+-Take the dog for a walk along a random route that begins and ends at home and takes 20-30 minutes to complete.
+-If the dog poops, pick it up using a plastic bag and throw it away in the first trash can you see.
+-When you return home, take off the leash and harness.
