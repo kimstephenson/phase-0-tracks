@@ -1,0 +1,51 @@
+h1, h2, h3 {
+  font-family: Arial;
+  color: blue;
+}
+#main_heading {
+  width: 45%;
+  margin: 5px auto;
+  text-align: center;
+}
+
+a:hover {
+  color: hotpink;
+}
+
+#github_cat {
+  display: block;
+  width: 600px;
+  margin: 5px auto 5px auto;
+}
+
+article > h2 {
+  border-bottom: 1px solid black;
+}
+
+.column-1 {
+  float: left;
+  width: 45%;
+  margin: auto 2% 10px 2%;
+  padding: 10px;
+  border: solid black;
+  border-radius: 10px;
+  background-color: gray;
+
+}
+
+.column-2 {
+  float: left;
+  width: 45%;
+  margin auto 2% auto 2%;
+  padding: 10px;
+  border: solid black;
+  border-radius: 10px;
+  background-color: gray;
+}
+
+footer {
+  display: block;
+  clear: both;
+  margin: 10px auto 10px auto;
+  width: 60%;
+}
