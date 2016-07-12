@@ -24,7 +24,6 @@ puts "Would you like to enroll in the company's health insurance? (y/n)"
     insurance = false
   end
 
-
 case
 when correct_age && wants_garlicbread, correct_age && insurance
     puts "Probably not a vampire"
