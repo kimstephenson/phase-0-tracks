@@ -43,7 +43,7 @@ while n <= employees_processed
     puts "Probably a vampire"
   end
 
-if allergies != "sunshine"
+  if allergies != "sunshine"
     if correct_age && !dislikes_both
         puts "Probably not a vampire"
     elsif !correct_age && !dislikes_both
@@ -55,7 +55,7 @@ if allergies != "sunshine"
     else
       puts "Results inconclusive"
     end
-end
+  end
 
 n += 1
 end
