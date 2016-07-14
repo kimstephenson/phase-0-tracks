@@ -30,10 +30,6 @@ while n <= employees_processed
       insurance = false
     end
 
-  if !wants_garlicbread && !insurance
-    dislikes_both = true
-  end
-
   allergies = nil
   puts "Name any allergies. Type \"done\" when finished"
   until allergies == "sunshine" || allergies == "done"
@@ -43,19 +39,25 @@ while n <= employees_processed
     puts "Probably a vampire"
   end
 
-  if allergies != "sunshine"
-    if correct_age && !dislikes_both
-        puts "Probably not a vampire"
-    elsif !correct_age && !dislikes_both
-        puts "Probably a vampire"
-    elsif !correct_age && dislikes_both
-        puts "Almost certainly a vampire"
-    elsif name == "Tu Fang"|| name == "Drake Cula"
-        puts "Definitely a vampire"
-    else
-      puts "Results inconclusive"
-    end
+final_result = ""
+if allergies != "sunshine"
+  if correct_age && (wants_garlicbread || insurance)
+    final_result = "Probably not a vampire"
   end
+  if !correct_age && (!wants_garlicbread || !insurance)
+    final_result = "Probably a vampire"
+  end
+  if !correct_age && (!wants_garlicbread && !insurance)
+    final_result= "Almost certainly a vampire"
+  end
+  if name == "Tu Fang"|| name == "Drake Cula"
+    final_result = "Definitely a vampire"
+  end
+  if final_result == ""
+    final_result = "Results inconclusive"
+  end
+end
+puts final_result
 
 n += 1
 end
