@@ -33,3 +33,9 @@ zoo = {
     }
   }
 }
+
+p zoo[:mammals][:cats].last
+p zoo[:birds][:small]
+p zoo[:reptiles][:snakes][1]
+p zoo[:mammals][:misc][:dog]
+p zoo[:reptiles][:misc]
