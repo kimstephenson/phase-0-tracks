@@ -1,13 +1,6 @@
 #Define a hash to store the information
 
-client_info = {
-  name: "",
-  age: "",
-  children: "",
-  decor_theme: "",
-  email: "",
-  wants_coupon: ""
-}
+client_info = {}
 
 #Ask user for each type of information, then convert to the right data type and store to appropriate key
 
@@ -39,8 +32,16 @@ client_info[:wants_coupon] = wants_coupon
 
 p client_info
 
-#Allow user to update a key, or enter "none" to skip
+#Allow user to update a key, or enter "none" to skip. Print the updated hash
 
+puts "Would you like to update any info? (enter \"none\" to skip)"
+updated_key = gets.chomp.to_sym
+if updated_key == :none
+  p client_info
+else
+  puts "Enter updated info:"
+  updated_value = gets.chomp
+  client_info[updated_key] = updated_value
+  p client_info
+end
 
-
-#Print the hash
