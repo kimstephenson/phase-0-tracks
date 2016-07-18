@@ -32,11 +32,26 @@ client_info[:wants_coupon] = wants_coupon
 
 p client_info
 
-#Allow user to update a key, or enter "none" to skip. Print the updated hash
+#Ask user if they would like to update info, or enter "none" to skip. Print the updated hash
 
 puts "Would you like to update any info? (enter \"none\" to skip)"
 updated_key = gets.chomp.to_sym
 if updated_key == :none
+  p client_info
+elsif updated_key == :age || updated_key == :children
+  puts "Enter updated info:"
+  updated_value = gets.chomp.to_i
+  client_info[updated_key] = updated_value
+  p client_info
+elsif updated_key == :wants_coupon
+  puts "Enter updated info:"
+  updated_value = gets.chomp
+    if updated_value.downcase == "yes"
+      updated_value = true
+    else
+      updated_value = false
+    end
+  client_info[updated_key] = updated_value
   p client_info
 else
   puts "Enter updated info:"
