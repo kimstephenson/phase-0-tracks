@@ -21,9 +21,8 @@ def vowel_changer(name)
       new_name << character
     end
   end
-  p new_name.join("").split(" ").each {|word| word.capitalize!}.join(" ")
+  new_name.join("").split(" ").each {|word| word.capitalize!}.join(" ")
 end
-vowel_changer("LUSITANIA MOTHERFUCKER")
 
 #Change all of the consonants to the next consonant
 
@@ -45,8 +44,5 @@ def consonant_changer(name)
   p new_name.join("").split(" ").each {|word| word.capitalize!}.join(" ")
 end
 
-consonant_changer("Zarkhir Zoom")
-
-
-
 #Create a method that takes a name and #implements all of the changes
+consonant_changer(vowel_changer(name_swapper("Felicia Torres")))
