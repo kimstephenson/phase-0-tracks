@@ -48,12 +48,20 @@ end
 
 user_input = nil
 puts "Enter the name(s) you would like to turn into an alias, or type \"quit\" to exit."
+user_input_storage = []
+alias_storage = []
 until user_input == "quit"
   user_input = gets.chomp
+  user_input_storage << user_input
   if user_input != "quit"
-    consonant_changer(vowel_changer(name_swapper(user_input)))
+    alias_storage << consonant_changer(vowel_changer(name_swapper(user_input)))
   end
 end
+
+#Make the 2 arrays of user info into a hash
+
+info_hash = Hash[user_input_storage.zip alias_storage]
+p info_hash
 
 
 
