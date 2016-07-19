@@ -40,26 +40,37 @@ p desserts
 
 #Release 2
 
-puts desserts.reject { |food| food < "g" }
-
-p desserts
-
-#puts desserts.reject! { |food| food < "g" }
-
+#puts desserts.reject { |food| food < "g" }
 #p desserts
+#non-destructively removes
 
-puts desserts.select { |food| food < "g" }
-
-p desserts
-
-#puts desserts.select! { |food| food < "g" }
-
+#puts desserts.select { |food| food < "g" }
 #p desserts
+#non-destructively selects
 
 #puts desserts.delete_if { |food| food < "g" }
-
 #p desserts
+#destructively removes
 
-puts desserts.drop_while { |food| food > "g" }
+#puts desserts.keep_if { |food| food < "g" }
+#p desserts
+#destructively selects
 
-p desserts
+#puts desserts.drop_while { |food| food > "g" }
+#p desserts
+#(non-destructively) drops up to, but not including, the first element that doesn't meet the condition in the block
+
+
+#puts meals.reject {|meal, food| food < "g"}
+#puts meals
+
+#puts meals.select {|meal, food| food < "g"}
+#puts meals
+
+#puts meals.keep_if {|meal, food| food < "g"}
+#puts meals
+
+#puts meals.delete_if {|meal, food| food < "g"}
+#puts meals
+
+#drop_while can be used on hashes, but it returns an array
