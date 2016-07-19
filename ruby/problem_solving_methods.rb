@@ -12,8 +12,8 @@ def fibonacci_adder(x)
   if x >= 7
     (x-6).times do
       array << (array[-1] + array[-2])
-      p array
     end
+    p array
   else
     p array[0...x]
   end
@@ -21,6 +21,7 @@ def fibonacci_adder(x)
 end
 
 fibonacci_adder(100)
+fibonacci_adder(4)
 
 array = [4 ,32, 567, 1, -54]
 
