@@ -1,15 +1,17 @@
 arr = [42, 89, 23, 1]
 
 def search_array(arr, number)
-  arr.each do |n|
+  arr.each_with_index do |n, i|
     if n == number
-      p (arr.length - 1)
+      return i
+    elsif !arr.include?(number)
+      return nil
     end
   end
 end
 
-search_array(arr, 32)
-search_array(arr, 89)
+p search_array(arr, 8)
+p search_array(arr, 23)
 
 def fibonacci_adder(x)
   array = [0,1,1,2,3,5]
@@ -25,6 +27,7 @@ def fibonacci_adder(x)
 end
 
 fibonacci_adder(100)
+fibonacci_adder(4)
 
 array = [4 ,32, 567, 1, -54]
 
