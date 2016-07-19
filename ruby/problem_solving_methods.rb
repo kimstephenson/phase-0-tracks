@@ -44,7 +44,7 @@ def bubble_sort(array)
       end
     end
 
-    #If no values have been swapped in one iteration through, the loop can #terminate
+    #If no values have been swapped in one iteration through, the loop can terminate
     break if !swapped
   end
 
