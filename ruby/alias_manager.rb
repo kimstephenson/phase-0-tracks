@@ -44,7 +44,7 @@ def consonant_changer(name)
   p new_name.join("").split(" ").each {|word| word.capitalize!}.join(" ")
 end
 
-#Ask for user input, until the user decides to exit. Create a nested method call that implements all of the changes
+#Ask for user input, until the user decides to exit. Create a nested method call that implements all of the changes. Create 2 arrays to store user input and alias output
 
 user_input = nil
 puts "Enter the name(s) you would like to turn into an alias, or type \"quit\" to exit."
@@ -52,8 +52,8 @@ user_input_storage = []
 alias_storage = []
 until user_input == "quit"
   user_input = gets.chomp
-  user_input_storage << user_input
   if user_input != "quit"
+    user_input_storage << user_input
     alias_storage << consonant_changer(vowel_changer(name_swapper(user_input)))
   end
 end
@@ -61,8 +61,13 @@ end
 #Make the 2 arrays of user info into a hash
 
 info_hash = Hash[user_input_storage.zip alias_storage]
-p info_hash
 
+#Print a statement for each key-value pair in the
+#hash
+
+info_hash.each do |key, value|
+  puts "#{key} is also known as #{value}."
+end
 
 
 
