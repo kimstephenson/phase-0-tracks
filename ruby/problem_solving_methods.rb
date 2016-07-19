@@ -1,19 +1,25 @@
 arr = [42, 89, 23, 1]
 
 def search_array(arr, number)
-  arr.index(number)
+  arr.each_with_index do |n, i|
+    if n == number
+      return i
+    elsif !arr.include?(number)
+      return nil
+    end
+  end
 end
 
-p search_array(arr, 32)
-p search_array(arr, 1)
+p search_array(arr, 8)
+p search_array(arr, 23)
 
 def fibonacci_adder(x)
   array = [0,1,1,2,3,5]
   if x >= 7
     (x-6).times do
       array << (array[-1] + array[-2])
-      p array
     end
+    p array
   else
     p array[0...x]
   end
@@ -21,6 +27,7 @@ def fibonacci_adder(x)
 end
 
 fibonacci_adder(100)
+fibonacci_adder(4)
 
 array = [4 ,32, 567, 1, -54]
 
