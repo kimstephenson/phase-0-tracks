@@ -44,5 +44,17 @@ def consonant_changer(name)
   p new_name.join("").split(" ").each {|word| word.capitalize!}.join(" ")
 end
 
-#Create a method that takes a name and #implements all of the changes
-consonant_changer(vowel_changer(name_swapper("Felicia Torres")))
+#Ask for user input, until the user decides to exit. Create a nested method call that implements all of the changes
+
+user_input = nil
+puts "Enter the name(s) you would like to turn into an alias, or type \"quit\" to exit."
+until user_input == "quit"
+  user_input = gets.chomp
+  if user_input != "quit"
+    consonant_changer(vowel_changer(name_swapper(user_input)))
+  end
+end
+
+
+
+
