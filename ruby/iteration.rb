@@ -16,7 +16,7 @@ meals = {
   dinner: "pizza"
   }
 
-desserts = ["ice cream", "candy", "cake"]
+desserts = ["ice cream", "candy", "cake", "pie"]
 
 p meals
 p desserts
@@ -35,5 +35,31 @@ p desserts
 desserts.map! do |food|
   food.upcase
 end
+
+p desserts
+
+#Release 2
+
+puts desserts.reject { |food| food < "g" }
+
+p desserts
+
+#puts desserts.reject! { |food| food < "g" }
+
+#p desserts
+
+puts desserts.select { |food| food < "g" }
+
+p desserts
+
+#puts desserts.select! { |food| food < "g" }
+
+#p desserts
+
+#puts desserts.delete_if { |food| food < "g" }
+
+#p desserts
+
+puts desserts.drop_while { |food| food > "g" }
 
 p desserts
