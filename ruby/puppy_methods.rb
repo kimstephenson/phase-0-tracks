@@ -50,5 +50,12 @@ class Cat
 
 end
 
+cat_array = []
+50.times do
+  cat_array <<  Cat.new
+end
 
-
+cat_array.each do |cat|
+  cat.purr(2)
+  cat.play("mouse")
+end
