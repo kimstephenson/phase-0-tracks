@@ -1,5 +1,8 @@
 class Santa
 
+  attr_reader :age, :ethnicity
+  attr_accessor :gender
+
   def initialize(gender, ethnicity)
     puts "Initializing Santa instance..."
     @gender = gender
@@ -24,18 +27,6 @@ class Santa
     @reindeer_ranking.insert(8, @reindeer_ranking.delete_at(@reindeer_ranking.index(reindeer)))
   end
 
-  def change_gender(new_gender)
-    @gender = new_gender
-  end
-
-  def age
-    @age
-  end
-
-  def ethnicity
-    @ethnicity
-  end
-
 end
 
 santas = []
@@ -51,10 +42,10 @@ santas.each do |santa|
   santa.eats_milk_and_cookies("oatmeal cookie")
   santa.celebrate_birthday
   santa.get_mad_at("Prancer")
-  santa.change_gender("female")
 end
 
 p santas[1].age
 p santas[3].ethnicity
+santas[2].gender = "male"
 p santas
 
