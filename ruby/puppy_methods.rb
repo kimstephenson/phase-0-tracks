@@ -34,3 +34,21 @@ fido.roll_over
 p fido.dog_years(3)
 fido.sit
 
+class Cat
+
+  def initialize
+    puts "Here is a new instance of a Cat."
+  end
+
+  def purr(n)
+    n.times {puts "Purr"}
+  end
+
+  def play(toy)
+    puts "The cat is playing with the #{toy}."
+  end
+
+end
+
+
+
