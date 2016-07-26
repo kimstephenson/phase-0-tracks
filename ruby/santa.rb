@@ -28,6 +28,14 @@ class Santa
     @gender = new_gender
   end
 
+  def age
+    @age
+  end
+
+  def ethnicity
+    @ethnicity
+  end
+
 end
 
 santas = []
@@ -46,4 +54,7 @@ santas.each do |santa|
   santa.change_gender("female")
 end
 
+p santas[1].age
+p santas[3].ethnicity
 p santas
+
