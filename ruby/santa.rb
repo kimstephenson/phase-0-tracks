@@ -18,6 +18,15 @@ class Santa
 
 end
 
-santa1 = Santa.new
-santa1.speak
-santa1.eats_milk_and_cookies("oatmeal cookie")
+santas = []
+genders = ["male", "female", "female", "male"]
+ethnicities = ["white", "black", "Latino", "Asian"]
+
+genders.length.times do |n|
+  santas << Santa.new(genders[n], ethnicities[n])
+end
+
+santas.each do |santa|
+  santa.speak
+  santa.eats_milk_and_cookies("oatmeal cookie")
+end
