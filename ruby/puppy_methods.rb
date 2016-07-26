@@ -5,5 +5,13 @@ class Puppy
     toy
   end
 
+  def speak(n)
+    n.times {puts "Woof!"}
+  end
+
 end
+
+fido = Puppy.new
+fido.fetch("ball")
+fido.speak(3)
 
