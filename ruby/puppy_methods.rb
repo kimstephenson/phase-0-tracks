@@ -17,6 +17,10 @@ class Puppy
     n * 7
   end
 
+  def sit
+    puts "*sits*"
+  end
+
 end
 
 fido = Puppy.new
@@ -24,4 +28,5 @@ fido.fetch("ball")
 fido.speak(3)
 fido.roll_over
 p fido.dog_years(3)
+fido.sit
 
