@@ -16,6 +16,18 @@ class Santa
     puts "That was a good #{cookie}!"
   end
 
+  def celebrate_birthday
+    @age += 1
+  end
+
+  def get_mad_at(reindeer)
+    @reindeer_ranking.insert(8, @reindeer_ranking.delete_at(@reindeer_ranking.index(reindeer)))
+  end
+
+  def change_gender(new_gender)
+    @gender = new_gender
+  end
+
 end
 
 santas = []
@@ -29,4 +41,9 @@ end
 santas.each do |santa|
   santa.speak
   santa.eats_milk_and_cookies("oatmeal cookie")
+  santa.celebrate_birthday
+  santa.get_mad_at("Prancer")
+  santa.change_gender("female")
 end
+
+p santas
