@@ -1,0 +1,97 @@
+#Create a Word Game class
+#The class will have the following attributes:
+# -A word
+# -A count of the number of guesses made
+#  -A count of available guesses, which depends on the length of the word
+# -An array of the letters in the word
+# -A boolean denoting whether the game is over
+#The class will have the following instance methods:
+# -A method that checks if the guessed letter is in the word and keeps track of the amount of guesses (only adding if the letter hasn't been guessed already)
+# -A method that prints a string of blanks the length of the answer, and fills in letters as correct guesses are made
+#The driver code will do the following:
+# -Ask Player 1 for the word
+# -Print a statement that tells Player 2 how many guesses they have
+# -A loop that continually accepts guesses until the word is complete or they run out of guesses. Also prints the updated feedback after each guess, and how many guesses they've used
+# -A congratulatory message if they win, or a taunting message if they lose
+
+class WordGame
+  attr_reader :available_guesses, :guesses_made,  :game_over
+
+  def initialize(word)
+    @word = word.downcase
+    @word_chars = word.downcase.split("")
+    @available_guesses = word.length * 2
+    @guesses_made = 0
+    @letters_guessed = []
+    @game_over = false
+    @word_game_printout = ("_ " * word.length).split" "
+  end
+
+  def guess_counter(letter)
+    unless @letters_guessed.include?(letter.downcase)
+      @letters_guessed << letter.downcase
+      @guesses_made += 1
+    else
+      @guesses_made
+    end
+  end
+
+  def game_printer(letter)
+    if @word_chars.include?(letter.downcase)
+      chars_to_replace = @word_chars.each_index.select{|i| @word_chars[i] == letter.downcase}
+      chars_to_replace.each do |i|
+        @word_game_printout[i] = letter.downcase
+      end
+      @word_game_printout.join(" ")
+    else
+      @word_game_printout.join(" ")
+    end
+  end
+
+  def game_ender
+    if @word_chars == @word_game_printout
+      puts "Congratulations, you guessed the word!"
+      @game_over = true
+    elsif @available_guesses == @guesses_made
+      puts "Oh no, you ran out of guesses!"
+      @game_over = true
+    end
+    @game_over
+  end
+end
+
+#User Interface
+
+puts "Player 1, please enter a word:"
+user_word = gets.chomp
+game = WordGame.new(user_word)
+puts "Player 2, you have #{game.available_guesses} guesses to figure out the word."
+
+until game.game_over
+  puts "Guess a letter:"
+  user_letter = gets.chomp
+  game.guess_counter(user_letter)
+  puts game.game_printer(user_letter)
+  game.game_ender
+  if !game.game_over
+    puts "You have #{game.available_guesses - game.guesses_made} guess(es) left."
+  end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
