@@ -21,5 +21,7 @@
 class WordGame(word)
   def initialize
     @word = word
+    @available_guesses = word.length
+    @guesses_made = 0
   end
 end
