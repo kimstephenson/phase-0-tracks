@@ -15,7 +15,7 @@
 # -A congratulatory message if they win, or a taunting message if they lose
 
 class WordGame
-  attr_reader :available_guesses, :guesses_made, :game_over, :word_game_printout
+  attr_reader :available_guesses, :guesses_made, :word_game_printout, :game_over
 
   def initialize(word)
     @word = word.downcase
@@ -67,8 +67,20 @@ user_word = gets.chomp
 game = WordGame.new(user_word)
 puts "Player 2, you have #{game.available_guesses} guesses to figure out the word."
 
+until game.game_over
+  puts "Guess a letter:"
+  user_letter = gets.chomp
+  game.guess_counter(user_letter)
+  puts game.game_printer(user_letter)
+  game.game_ender
+  if !game.game_over
+    puts "You have #{game.available_guesses - game.guesses_made} guess(es) left."
+  end
+end
 
-#Must do guess counter, then game printer
+
+
+
 
 
 
