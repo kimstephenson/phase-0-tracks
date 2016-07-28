@@ -15,7 +15,7 @@
 # -A congratulatory message if they win, or a taunting message if they lose
 
 class WordGame
-  attr_reader :available_guesses, :guesses_made, :word_game_printout, :game_over
+  attr_reader :available_guesses, :guesses_made,  :game_over
 
   def initialize(word)
     @word = word.downcase
