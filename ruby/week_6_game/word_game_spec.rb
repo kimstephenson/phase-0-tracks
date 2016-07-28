@@ -14,4 +14,5 @@ describe WordGame do
     expect(game.game_printer("A")).to eq("_ _ _ a _ _")
     expect(game.game_printer("o")).to eq("_ o _ a _ o")
   end
+
 end

@@ -1,12 +1,12 @@
 #Create a Word Game class
 #The class will have the following attributes:
-# -A word, which is a writable attribute received in the form of user input
+# -A word
 # -A count of the number of guesses made
 #  -A count of available guesses, which depends on the length of the word
 # -An array of the letters in the word
 # -A boolean denoting whether the game is over
 #The class will have the following instance methods:
-# -A method that checks if the guessed letter is in the word and keeps track of the amount of guesses (only adding if the letter hasn’t been guessed already)
+# -A method that checks if the guessed letter is in the word and keeps track of the amount of guesses (only adding if the letter hasn't been guessed already)
 # -A method that prints a string of blanks the length of the answer, and fills in letters as correct guesses are made
 #The driver code will do the following:
 # -Ask Player 1 for the word
@@ -47,9 +47,30 @@ class WordGame
       @word_game_printout.join(" ")
     end
   end
+
+  def game_ender
+    if @word_chars == @word_game_printout
+      puts "Congratulations, you guessed the word!"
+      @game_over = true
+    elsif @available_guesses == @guesses_made
+      puts "Oh no, you ran out of guesses!"
+      @game_over = true
+    end
+    @game_over
+  end
 end
 
-game = WordGame.new("potato")
+#User Interface
+
+puts "Player 1, please enter a word:"
+user_word = gets.chomp
+game = WordGame.new(user_word)
+puts "Player 2, you have #{game.available_guesses} guesses to figure out the word."
+
+
+#Must do guess counter, then game printer
+
+
 
 
 
