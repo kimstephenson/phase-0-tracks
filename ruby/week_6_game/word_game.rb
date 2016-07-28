@@ -38,7 +38,10 @@ class WordGame
 
   def game_printer(letter)
     if @word_chars.include?(letter.downcase)
-      @word_game_printout[@word_chars.index(letter.downcase)] = letter.downcase
+      chars_to_replace = @word_chars.each_index.select{|i| @word_chars[i] == letter.downcase}
+      chars_to_replace.each do |i|
+        @word_game_printout[i] = letter.downcase
+      end
       @word_game_printout.join(" ")
     else
       @word_game_printout.join(" ")
@@ -47,10 +50,7 @@ class WordGame
 end
 
 game = WordGame.new("potato")
-p game.game_printer("O")
-p game.guess_counter("O")
-p game.game_printer("o")
-p game.guess_counter("o")
+
 
 
 
