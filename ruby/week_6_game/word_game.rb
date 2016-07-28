@@ -6,48 +6,53 @@
 # -An array of the letters in the word
 # -A boolean denoting whether the game is over
 #The class will have the following instance methods:
-# -A method that checks if the guessed letter is in the word and keeps track
-# of the amount of guesses (only adding if the letter hasn’t been guessed already)
-# -A method that prints a string of blanks the length of the answer, and fills in
-# letters as correct guesses are made
+# -A method that checks if the guessed letter is in the word and keeps track of the amount of guesses (only adding if the letter hasn’t been guessed already)
+# -A method that prints a string of blanks the length of the answer, and fills in letters as correct guesses are made
 #The driver code will do the following:
 # -Ask Player 1 for the word
 # -Print a statement that tells Player 2 how many guesses they have
-# -A loop that continually accepts guesses until the word is complete or they run
-# out of guesses. Also prints the updated feedback after each guess, and how many guesses they've used
+# -A loop that continually accepts guesses until the word is complete or they run out of guesses. Also prints the updated feedback after each guess, and how many guesses they've used
 # -A congratulatory message if they win, or a taunting message if they lose
 
 class WordGame
-  attr_reader :available_guesses, :guesses_made, :game_over, :letters_guessed
+  attr_reader :available_guesses, :guesses_made, :game_over, :word_game_printout
 
   def initialize(word)
-    @word = word
-    @word_chars = word.split("")
+    @word = word.downcase
+    @word_chars = word.downcase.split("")
     @available_guesses = word.length * 2
     @guesses_made = 0
     @letters_guessed = []
     @game_over = false
+    @word_game_printout = ("_ " * word.length).split" "
   end
 
   def guess_counter(letter)
-    unless @letters_guessed.include?(letter)
-      @letters_guessed << letter
+    unless @letters_guessed.include?(letter.downcase)
+      @letters_guessed << letter.downcase
       @guesses_made += 1
     else
       @guesses_made
     end
   end
+
+  def game_printer(letter)
+    if @word_chars.include?(letter.downcase)
+      @word_game_printout[@word_chars.index(letter.downcase)] = letter.downcase
+      @word_game_printout.join(" ")
+    else
+      @word_game_printout.join(" ")
+    end
+  end
 end
 
 game = WordGame.new("potato")
-p game.guess_counter("a")
-p game.letters_guessed
-p game.guess_counter("b")
-p game.letters_guessed
-p game.guess_counter("a")
-p game.letters_guessed
-p game.guess_counter("c")
-p game.letters_guessed
+p game.game_printer("O")
+p game.guess_counter("O")
+p game.game_printer("o")
+p game.guess_counter("o")
+
+
 
 
 
