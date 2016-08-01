@@ -29,16 +29,17 @@ class VirusPredictor
   #Uses an if statement to calculate predicted deaths based on population density
   def predicted_deaths
     # predicted deaths is solely based on population density
-    if @population_density >= 200
-      n = 0.4
-    elsif @population_density >= 150
-      n = 0.3
-    elsif @population_density >= 100
-      n = 0.2
-    elsif @population_density >= 50
-      n = 0.1
+    n = case
+    when @population_density >= 200
+      0.4
+    when @population_density >= 150
+      0.3
+    when @population_density >= 100
+      0.2
+    when @population_density >= 50
+      0.1
     else
-      n = 0.05
+      0.05
     end
     number_of_deaths = (@population * n).floor
 
@@ -50,16 +51,17 @@ class VirusPredictor
   def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
-    if @population_density >= 200
-      speed = 0.5
-    elsif @population_density >= 150
-      speed = 1
-    elsif @population_density >= 100
-      speed = 1.5
-    elsif @population_density >= 50
-      speed = 2
+    speed = case
+    when @population_density >= 200
+      0.5
+    when @population_density >= 150
+      1
+    when @population_density >= 100
+      1.5
+    when @population_density >= 50
+      2
     else
-      speed = 2.5
+      2.5
     end
 
     puts " and will spread across the state in #{speed} months.\n\n"
