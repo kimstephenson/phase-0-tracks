@@ -38,12 +38,13 @@ function keyValueMatch(obj1, obj2){
 function arrayGenerator(n){
   var wordsArray = [];
   var letters = "abcdefghijklmnopqrstuvwxyz".split("");
-  for (var i = 1; i <= n; i ++){
+  for (var x = 1; x <= n; x ++){
     newWord = []
     for (var i = 1; i <= (Math.floor(Math.random() * 10) + 1); i++ ){
       newWord.push (letters[(Math.floor(Math.random() * letters.length))]);
+      console.log(newWord)
     }
-    wordsArray.push(newWord.join(""))
+    wordsArray.push(newWord.join(""));
   }
   console.log(wordsArray)
 }
