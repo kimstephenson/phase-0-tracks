@@ -17,10 +17,25 @@ function longestPhrase(phrase) {
 //If any pairs match, return true. If not, return false
 
 function keyValueMatch(obj1, obj2){
-
+  var i = 0
+  for (var key in obj1) {
+    if (obj1[key] == obj2[key]) {
+      i ++;
+    }
+  }
+  if (i > 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 //console.log(longestPhrase(["cat", "Hi there", "to"]));
 //console.log(longestPhrase(["bananas", "dog", "hello"]));
 //console.log(longestPhrase(["stuff", "thing", "JavaScript"]));
 
+//if (obj1[i] = obj2(obj1[i])) {
+//      console.log("hello")
+
+console.log(keyValueMatch({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
+console.log(keyValueMatch({name: "Steven", age: 54}, {name: "Tamir", age: 55}));
