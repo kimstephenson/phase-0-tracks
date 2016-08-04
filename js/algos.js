@@ -8,7 +8,7 @@ function longestPhrase(phrase) {
   for (var i = 0; i <= (phrase.length - 1); i++){
     phraseLengths.push(phrase[i].length);
   }
-  return Math.max.apply(null, phraseLengths)
+  return phrase[phraseLengths.indexOf(Math.max.apply(null, phraseLengths))];
 }
 
 console.log(longestPhrase(["cat", "Hi there", "to"]));
