@@ -38,4 +38,4 @@ function keyValueMatch(obj1, obj2){
 //      console.log("hello")
 
 console.log(keyValueMatch({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
-console.log(keyValueMatch({name: "Steven", age: 54}, {name: "Tamir", age: 55}));
+console.log(keyValueMatch({name: "Steven", age: 54}, {name: "Tamir", eyeColor: "blue"}));
