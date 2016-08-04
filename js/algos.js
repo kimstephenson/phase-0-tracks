@@ -12,3 +12,5 @@ function longestPhrase(phrase) {
 }
 
 console.log(longestPhrase(["cat", "Hi there", "to"]));
+console.log(longestPhrase(["bananas", "dog", "hello"]));
+console.log(longestPhrase(["stuff", "thing", "JavaScript"]));
