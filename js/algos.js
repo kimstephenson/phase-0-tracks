@@ -11,6 +11,16 @@ function longestPhrase(phrase) {
   return phrase[phraseLengths.indexOf(Math.max.apply(null, phraseLengths))];
 }
 
-console.log(longestPhrase(["cat", "Hi there", "to"]));
-console.log(longestPhrase(["bananas", "dog", "hello"]));
-console.log(longestPhrase(["stuff", "thing", "JavaScript"]));
+//Take 2 objects as arguments
+//Iterate through keys to see if any match
+//If any 2 keys match, see if their values also match
+//If any pairs match, return true. If not, return false
+
+function keyValueMatch(obj1, obj2){
+
+}
+
+//console.log(longestPhrase(["cat", "Hi there", "to"]));
+//console.log(longestPhrase(["bananas", "dog", "hello"]));
+//console.log(longestPhrase(["stuff", "thing", "JavaScript"]));
+
