@@ -42,11 +42,9 @@ function arrayGenerator(n){
     newWord = []
     for (var i = 1; i <= (Math.floor(Math.random() * 10) + 1); i++ ){
       newWord.push (letters[(Math.floor(Math.random() * letters.length))]);
-      console.log(newWord)
     }
     wordsArray.push(newWord.join(""));
   }
-  console.log(wordsArray)
 }
 
 //console.log(longestPhrase(["cat", "Hi there", "to"]));
@@ -56,4 +54,4 @@ function arrayGenerator(n){
 //console.log(keyValueMatch({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
 //console.log(keyValueMatch({name: "Steven", age: 54}, {name: "Tamir", eyeColor: "blue"}));
 
-arrayGenerator(3)
+arrayGenerator(2)
