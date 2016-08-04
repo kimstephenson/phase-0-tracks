@@ -3,6 +3,12 @@
 //Find the index of the largest number in the number array
 //Return the word that is at that same index in the word array
 
-function longestPhrase {
-
+function longestPhrase(phrase) {
+  var phraseLengths = []
+  for (var i = 0; i <= (phrase.length - 1); i++){
+    phraseLengths.push(phrase[i].length);
+  }
+  return phraseLengths
 }
+
+console.log(longestPhrase(["cat", "some", "to"]));
