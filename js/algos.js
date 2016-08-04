@@ -30,12 +30,29 @@ function keyValueMatch(obj1, obj2){
   }
 }
 
+//Take an integer as argument
+//Create that many random strings, between 1-10 letters long
+//Create array of alphabet characters to form words from
+//Make those words into an array
+
+function arrayGenerator(n){
+  var wordsArray = [];
+  var letters = "abcdefghijklmnopqrstuvwxyz".split("");
+  for (var i = 1; i <= n; i ++){
+    newWord = []
+    for (var i = 1; i <= (Math.floor(Math.random() * 10) + 1); i++ ){
+      newWord.push (letters[(Math.floor(Math.random() * letters.length))]);
+    }
+    wordsArray.push(newWord.join(""))
+  }
+  console.log(wordsArray)
+}
+
 //console.log(longestPhrase(["cat", "Hi there", "to"]));
 //console.log(longestPhrase(["bananas", "dog", "hello"]));
 //console.log(longestPhrase(["stuff", "thing", "JavaScript"]));
 
-//if (obj1[i] = obj2(obj1[i])) {
-//      console.log("hello")
+//console.log(keyValueMatch({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
+//console.log(keyValueMatch({name: "Steven", age: 54}, {name: "Tamir", eyeColor: "blue"}));
 
-console.log(keyValueMatch({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
-console.log(keyValueMatch({name: "Steven", age: 54}, {name: "Tamir", eyeColor: "blue"}));
+arrayGenerator(3)
