@@ -17,17 +17,12 @@ function longestPhrase(phrase) {
 //If any pairs match, return true. If not, return false
 
 function keyValueMatch(obj1, obj2){
-  var i = 0
   for (var key in obj1) {
     if (obj1[key] == obj2[key]) {
-      i ++;
+      return true
     }
   }
-  if (i > 0) {
-    return true;
-  } else {
-    return false;
-  }
+    return false
 }
 
 //Take an integer as argument
