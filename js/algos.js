@@ -47,8 +47,8 @@ function arrayGenerator(n){
 //console.log(longestPhrase(["bananas", "dog", "hello"]));
 //console.log(longestPhrase(["stuff", "thing", "JavaScript"]));
 
-console.log(keyValueMatch({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
-console.log(keyValueMatch({name: "Steven", age: 54}, {name: "Tamir", eyeColor: "blue"}));
+//console.log(keyValueMatch({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
+//console.log(keyValueMatch({name: "Steven", age: 54}, {name: "Tamir", eyeColor: "blue"}));
 
 for (var i = 1; i <=10; i++){
   var newArray = arrayGenerator(4)
