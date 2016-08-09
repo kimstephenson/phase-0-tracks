@@ -1,0 +1,22 @@
+SELECT * FROM classes;
+1|Beginning programming
+2|Intermediate programming
+3|Advanced programming
+
+UPDATE students SET name="Jimmy" WHERE name="James";
+
+SELECT * FROM classes, students WHERE classes.id = students.class_id;
+3|Advanced programming|1|Sally|true|3
+2|Intermediate programming|2|John|false|2
+1|Beginning programming|3|Angela|true|1
+3|Advanced programming|4|Jimmy|true|3
+2|Intermediate programming|5|Tom|false|2
+
+SELECT students.name, classes.name FROM students JOIN classes ON students.class_id = classes.id;
+Sally|Advanced programming
+John|Intermediate programming
+Angela|Beginning programming
+Jimmy|Advanced programming
+Tom|Intermediate programming
+
+DELETE FROM students WHERE class_id=1;
