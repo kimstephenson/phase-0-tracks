@@ -20,3 +20,32 @@ Jimmy|Advanced programming
 Tom|Intermediate programming
 
 DELETE FROM students WHERE class_id=1;
+
+SELECT * FROM students
+INNER JOIN classes ON students.id = classes.id;
+1|Sally|true|3|1|Beginning programming
+2|John|false|2|2|Intermediate programming
+
+SELECT * FROM students
+LEFT JOIN classes ON students.id = classes.id;
+1|Sally|true|3|1|Beginning programming
+2|John|false|2|2|Intermediate programming
+4|Jimmy|true|3||
+5|Tom|false|2||
+
+SELECT * FROM students
+CROSS JOIN classes;
+1|Sally|true|3|1|Beginning programming
+1|Sally|true|3|2|Intermediate programming
+1|Sally|true|3|3|Advanced programming
+2|John|false|2|1|Beginning programming
+2|John|false|2|2|Intermediate programming
+2|John|false|2|3|Advanced programming
+4|Jimmy|true|3|1|Beginning programming
+4|Jimmy|true|3|2|Intermediate programming
+4|Jimmy|true|3|3|Advanced programming
+5|Tom|false|2|1|Beginning programming
+5|Tom|false|2|2|Intermediate programming
+5|Tom|false|2|3|Advanced programming
+
+SQLite3 does not support right joins or full outer joins.
