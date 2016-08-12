@@ -8,7 +8,7 @@
 #     Creates a new table for each user
 
 require "sqlite3"
-db = SQLite3::Database.new("todo_list.db")
+$Todo_Data = SQLite3::Database.new("todo_list.db")
 
 def print_menu
   puts "Enter '1' to view your to-do list,"
@@ -20,21 +20,33 @@ def print_menu
   puts "or 'q' to quit the program."
 end
 
+def add_item
+  puts "Enter the name of the task:"
+  name = gets.chomp
+  puts "Enter the task deadline (YYYY-MM-DD HH:MM):"
+  deadline = gets.chomp
+  puts "Enter a note or comment (optional):"
+  comment = gets.chomp
+  $Todo_Data.execute("INSERT INTO #{$User_name} (task_name, deadline, opt_comment) VALUES (?, ?, ?)", [name, deadline, comment])
+  puts "You added the task '#{name}' with deadline #{deadline}."
+  puts ""
+end
+
 puts "Welcome to the To-Do List Manager!"
 puts "Please enter your name:"
-user_name = gets.chomp
+$User_name = gets.chomp
 
 create_table = <<-SQL
-  CREATE TABLE IF NOT EXISTS #{user_name}(
+  CREATE TABLE IF NOT EXISTS #{$User_name}(
     id INTEGER PRIMARY KEY,
     task_name VARCHAR(255),
-    opt_comment VARCHAR(255),
-    deadline DATETIME
+    deadline DATETIME,
+    opt_comment VARCHAR(255)
     )
 SQL
 
-db.execute(create_table)
-puts "Hello, #{user_name}."
+$Todo_Data.execute(create_table)
+puts "Hello, #{$User_name}."
 print_menu
 menu_input = ""
 until menu_input == "q"
@@ -42,7 +54,17 @@ until menu_input == "q"
   if menu_input == "menu"
     print_menu
   elsif menu_input == "1"
-    puts "list will go here"
+    add_item
+  elsif menu_input == "2"
+    puts "add item method goes here"
+  elsif menu_input == "3"
+    puts "update method goes here"
+  elsif menu_input == "4"
+    puts "removal method goes here"
+  elsif menu_input == "5"
+    puts "method to switch users goes here"
+  else
+    puts "Please enter a valid option."
   end
 end
 
