@@ -13,9 +13,8 @@ $Todo_Data = SQLite3::Database.new("todo_list.db")
 def print_menu
   puts "Enter '1' to view your to-do list,"
   puts "'2' to add an item,"
-  puts "'3' to update an item,"
+  puts "'3' to update an existing item,"
   puts "'4' to remove an item,"
-  puts "'5' to switch users,"
   puts "'menu' to view this menu again,"
   puts "or 'q' to quit the program."
 end
@@ -38,6 +37,28 @@ def add_item
   comment = gets.chomp
   $Todo_Data.execute("INSERT INTO #{$User_name} (task_name, deadline, opt_comment) VALUES (?, ?, ?)", [name, deadline, comment])
   puts "You added the item '#{name}' with deadline #{deadline}."
+  puts "Ready to perform another task."
+end
+
+def update_item
+  puts "Your current list includes:"
+  puts $Todo_Data.execute("SELECT task_name FROM #{$User_name}")
+  puts "Which item would you like to update?"
+  item_to_update = gets.chomp
+  puts "Enter updated name:"
+  updated_name = gets.chomp
+  puts "Enter updated deadline:"
+  updated_deadline = gets.chomp
+  puts "Enter updated comment:"
+  updated_comment = gets.chomp
+end
+
+def remove_item
+  puts "Your current list includes:"
+  puts $Todo_Data.execute("SELECT task_name FROM #{$User_name}")
+  puts "Which item would you like to remove?"
+  item_to_remove = gets.chomp
+  $Todo_Data.execute("DELETE FROM #{$User_name} WHERE task_name = '#{item_to_remove}'")
   puts "Ready to perform another task."
 end
 
@@ -67,12 +88,10 @@ until menu_input == "q"
   elsif menu_input == "2"
     add_item
   elsif menu_input == "3"
-    puts "update method goes here"
+    update_item
   elsif menu_input == "4"
-    puts "removal method goes here"
-  elsif menu_input == "5"
-    puts "method to switch users goes here"
-  else
+    remove_item
+  elsif menu_input != "q"
     puts "Please enter a valid option."
   end
 end
