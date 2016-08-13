@@ -45,12 +45,7 @@ def update_item
   puts $Todo_Data.execute("SELECT task_name FROM #{$User_name}")
   puts "Which item would you like to update?"
   item_to_update = gets.chomp
-  puts "Enter updated name:"
-  updated_name = gets.chomp
-  puts "Enter updated deadline:"
-  updated_deadline = gets.chomp
-  puts "Enter updated comment:"
-  updated_comment = gets.chomp
+  puts "Update item 'name', 'deadline' or 'comment'?"
 end
 
 def remove_item
@@ -58,7 +53,9 @@ def remove_item
   puts $Todo_Data.execute("SELECT task_name FROM #{$User_name}")
   puts "Which item would you like to remove?"
   item_to_remove = gets.chomp
-  $Todo_Data.execute("DELETE FROM #{$User_name} WHERE task_name = '#{item_to_remove}'")
+  $Todo_Data.execute("DELETE FROM #{$User_name} WHERE task_name LIKE '%#{item_to_remove}%'")
+  puts "Your updated list includes:"
+  puts $Todo_Data.execute("SELECT task_name FROM #{$User_name}")
   puts "Ready to perform another task."
 end
 
