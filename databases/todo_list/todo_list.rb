@@ -20,6 +20,15 @@ def print_menu
   puts "or 'q' to quit the program."
 end
 
+def view_list
+  list_data = $Todo_Data.execute("SELECT * FROM #{$User_name} ORDER BY deadline ASC")
+  puts "#{$User_name}'s To-Do List"
+  list_data.each do |task|
+    puts "-#{task[1]}. Deadline: #{task[2]}. #{task[3]}"
+  end
+  puts "Ready to perform another task."
+end
+
 def add_item
   puts "Enter the name of the task:"
   name = gets.chomp
@@ -28,8 +37,8 @@ def add_item
   puts "Enter a note or comment (optional):"
   comment = gets.chomp
   $Todo_Data.execute("INSERT INTO #{$User_name} (task_name, deadline, opt_comment) VALUES (?, ?, ?)", [name, deadline, comment])
-  puts "You added the task '#{name}' with deadline #{deadline}."
-  puts ""
+  puts "You added the item '#{name}' with deadline #{deadline}."
+  puts "Ready to perform another task."
 end
 
 puts "Welcome to the To-Do List Manager!"
@@ -54,9 +63,9 @@ until menu_input == "q"
   if menu_input == "menu"
     print_menu
   elsif menu_input == "1"
-    add_item
+    view_list
   elsif menu_input == "2"
-    puts "add item method goes here"
+    add_item
   elsif menu_input == "3"
     puts "update method goes here"
   elsif menu_input == "4"
