@@ -47,12 +47,17 @@ end
 def update_item
   puts "Your current list includes:"
   puts $Todo_Data.execute("SELECT name FROM #{$User_name}")
+  puts ""
   puts "Which item would you like to update?"
   item_to_update = gets.chomp
   puts "Update 'name', 'deadline' (YYYY-MM-DD HH:MM), or 'comment'?"
   attr_to_update = gets.chomp.downcase
   puts "Enter updated info:"
   updated_info = gets.chomp
+  $Todo_Data.execute("UPDATE #{$User_name} SET #{attr_to_update} = '#{updated_info}' WHERE name = '#{item_to_update}'")
+  puts "'#{item_to_update}' - #{attr_to_update} has been set to '#{updated_info}'."
+  puts ""
+  puts "Ready to perform another task."
 end
 
 def remove_item
