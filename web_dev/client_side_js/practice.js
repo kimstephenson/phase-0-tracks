@@ -1,13 +1,20 @@
 console.log("The script is running!");
 
-function addBlueBorder(event) {
-  event.target.style.border = "5px solid blue";
+function addBorder(array){
+  for(var i = 0; i < array.length; i ++){
+    array[i].style.border = "1px solid black";
+  }
+}
+
+function changeColor(event) {
+  event.target.style.color = "blue";
 }
 
 var listitems = document.getElementsByTagName("li");
 var listitem = listitems[0];
 
-listitem.addEventListener("mouseover", addBlueBorder);
+addBorder(listitems)
+listitem.addEventListener("mouseover", changeColor);
 
 
 
