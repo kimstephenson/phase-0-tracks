@@ -10,3 +10,12 @@ $(document).ready(function(){
     $("#myList").hide();
   });
 });
+
+$(document).ready(function(){
+  $("li").hover(function() {
+    $(this).css("background-color", "blue");
+  },
+  function(){
+    $(this).css("background-color", "gray");
+  });
+});
