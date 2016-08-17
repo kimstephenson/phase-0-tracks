@@ -64,3 +64,8 @@ get "/add/:number1/:number2" do
   result = params[:number1].to_i + params[:number2].to_i
   "#{params[:number1]} + #{params[:number2]} = #{result.to_s}"
 end
+
+get "/firstname/:name" do
+  info = db.execute("SELECT * FROM students WHERE name LIKE ?", "#{params[:name]}%")
+  info.to_s
+end
