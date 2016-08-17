@@ -1,17 +1,13 @@
 
-$(document).ready(function() {
-   $("h1").click(function() {
-    alert("Dialog box created by jQuery");
-  });
-});
-
 $(document).ready(function(){
   $("button").click(function() {
-    $("#myList").hide();
+    $("#myList").slideToggle();
   });
-});
 
-$(document).ready(function(){
+  $("h1").click(function() {
+    alert("Dialog box created by jQuery");
+  });
+
   $("li").hover(function() {
     $(this).css("background-color", "blue");
   },
@@ -19,3 +15,5 @@ $(document).ready(function(){
     $(this).css("background-color", "gray");
   });
 });
+
+
