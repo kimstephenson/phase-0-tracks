@@ -10,7 +10,11 @@ $(document).ready(function(){
     alert("Dialog box created by jQuery");
   });
 
-  $("ol").append("<li>New list item</li>")
+  function insertPara() {
+    var newPara = "<p> jQuery is fun </p>"
+    $("p").after(newPara);
+  }
+  insertPara()
 
   $("li").hover(function() {
     $(this).css("background-color", "blue");
