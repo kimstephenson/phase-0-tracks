@@ -15,7 +15,7 @@ $(document).ready(function(){
   });
 
   $("li").hover(function() {
-    $(this).css("background-color", "blue");
+    $(this).css("background-color", "green");
   },
   function(){
     $(this).css("background-color", "gray");
