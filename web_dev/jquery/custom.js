@@ -1,8 +1,8 @@
 
 $(document).ready(function(){
-  $("button").click(function() {
+  $("#listButton").click(function() {
     $("#myList").slideToggle("slow", function(){
-      $("button").text("Show list")
+      $("#listButton").text("Show list")
     });
   });
 
@@ -10,11 +10,9 @@ $(document).ready(function(){
     alert("Dialog box created by jQuery");
   });
 
-  function insertPara() {
-    var newPara = "<p> jQuery is fun </p>"
-    $("p").after(newPara);
-  }
-  insertPara()
+  $("#addPara").one("click", function() {
+    $("p").after("<p>jQuery is fun</p>");
+  });
 
   $("li").hover(function() {
     $(this).css("background-color", "blue");
