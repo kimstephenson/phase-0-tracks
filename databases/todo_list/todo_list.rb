@@ -54,7 +54,7 @@ def update_item
   attr_to_update = gets.chomp.downcase
   puts "Enter updated info:"
   updated_info = gets.chomp
-  $Todo_Data.execute("UPDATE #{$User_name} SET #{attr_to_update} = '#{updated_info}' WHERE name = '#{item_to_update}'")
+  $Todo_Data.execute("UPDATE #{$User_name} SET #{attr_to_update} =? WHERE name =?", [updated_info, item_to_update])
   puts "'#{item_to_update}' - #{attr_to_update} has been set to '#{updated_info}'."
   puts ""
   puts "Ready to perform another task."
@@ -66,7 +66,7 @@ def remove_item
   puts ""
   puts "Which item would you like to remove?"
   item_to_remove = gets.chomp
-  $Todo_Data.execute("DELETE FROM #{$User_name} WHERE name = '#{item_to_remove}'")
+  $Todo_Data.execute("DELETE FROM #{$User_name} WHERE name=?", item_to_remove)
   puts ""
   puts "Your updated list includes:"
   puts $Todo_Data.execute("SELECT name FROM #{$User_name}")
