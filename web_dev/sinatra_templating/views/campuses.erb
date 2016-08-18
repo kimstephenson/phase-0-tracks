@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <ul>
+  <% @campuses.each do |campus| %>
+    <li> <%= campus['city']  %></li>
+  <% end %>
+  </ul>
+</body>
+</html>
